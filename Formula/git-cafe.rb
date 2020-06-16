@@ -6,7 +6,7 @@ class GitCafe < Formula
     :revision => "a0cab7608c5805fd2f55d25477a54083e28eeb71"
   version "0.0.1"
 
-  # this depends_on "git" # But let's not require the installation as git-cafe is more of a plugin
+  # Could add depends_on "git", but let's not require the installation as git-cafe is more of a plugin
 
   def install
     bin.install "git-all" => "git-all"

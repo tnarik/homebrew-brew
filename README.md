@@ -35,3 +35,8 @@ It is a good idea to add some tests after the creatoin of the formulae are edite
 ```
 brew test git-cafe
 ```
+
+## Notes
+Even though the installation of some tools/applications starts from private repos, it makes sense distributing what is basically source code (scripts) as a bottle as well just in case someone else actually wants to use them.
+
+That means in some instances building from source might break until I finally manage to find the time to migrate the code to public repos.
