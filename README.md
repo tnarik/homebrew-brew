@@ -37,6 +37,23 @@ brew test git-cafe
 ```
 
 ## Notes
-Even though the installation of some tools/applications starts from private repos, it makes sense distributing what is basically source code (scripts) as a bottle as well just in case someone else actually wants to use them.
+Even though the installation of some tools/applications starts from private repos, it makes sense distributing what is basically source code (scripts) as a bottle as well just in case someone else actually wants to use them. Found some information [here](https://jonathanchang.org/blog/maintain-your-own-homebrew-repository-with-binary-bottles/).
 
 That means in some instances building from source might break until I finally manage to find the time to migrate the code to public repos.
+
+Bottles will be uploaded to bintray, which is free for open source projects. I'm not sure if it is a restriction, but it is a good idea to have the name of the repository starting with `bottles` and it doesn't hurt if `bottles-<tap>` matches `homebrew-<tap>`.
+Other than that (and optionally selecting a OSS license for the whole repo), a package need to be created, matching the name of the different formulae. The OSS license can be selected at that point.
+
+The following would run locally the test-bot flow for the formula, creating the bottles.
+
+```
+brew test-bot --root-url=https://dl.bintray.com/tnarik/bottles-brew --bintray-org=tnarik --tap=tnarik/brew <formula>
+```
+
+And this would upload the bottles (`HOMEBREW_BINTRAY_USER` and `HOMEBREW_BINTRAY_KEY` need to be defined):
+
+```
+brew pr-upload --bintray-org=tnarik --root-url=https://dl.bintray.com/tnarik/bottles-brew
+```
+
+It can be used with `--no-publish` in case chacking and manual publishing is desired (they will be uploaded, but kept private for some time until they expire if not published).
