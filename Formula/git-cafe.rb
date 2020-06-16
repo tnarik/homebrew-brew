@@ -7,7 +7,7 @@ class GitCafe < Formula
   version "0.0.1"
 
   bottle do
-    root_url "https://dl.bintray.com/tnarik/bottles-brew"
+    root_url "https://dl.bintray.com/tnarik/bottles-tap"
     cellar :any_skip_relocation
     sha256 "56054df145fa307eb5170ad5b2fbe9def6ef53615fea95f43202079cc051736a" => :catalina
   end
