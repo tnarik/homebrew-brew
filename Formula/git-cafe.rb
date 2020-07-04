@@ -1,5 +1,5 @@
 class GitCafe < Formula
-  desc "GIT utils by tnarik"
+  desc "GIT Custom utils by tnarik"
   homepage "https://gogs.lecafeautomatique.net/tnarik/git_custom"
   url "git@gitcafe:tnarik/git_custom.git",
     :using    => :git,
@@ -9,7 +9,7 @@ class GitCafe < Formula
   bottle do
     root_url "https://dl.bintray.com/tnarik/bottles-brew"
     cellar :any_skip_relocation
-    sha256 "817660e2e836afcdfb4df199c97922bb8a0355bd73896d9b2ef565a4271cf016" => :catalina
+    sha256 "dd4b879f58db1aebc85566be71e3163bccdede20e29ac7043a28b04fbecdf6ea" => :catalina
   end
 
   # Could add depends_on "git", but let's not require the installation as git-cafe is more of a plugin
