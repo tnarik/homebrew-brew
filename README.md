@@ -30,7 +30,7 @@ brew create --tap=tnarik/brew <URL to zipl or tarball>
 
 More information is available [here](https://docs.brew.sh/Formula-Cookbook)
 
-It is a good idea to add some tests after the creatoin of the formulae are edited (and remove all generated comments). In order to test:
+It is a good idea to add some tests after the creation of the formulae and any modification (and remove all generated comments). In order to test:
 
 ```
 brew test git-cafe
@@ -56,4 +56,4 @@ And this would upload the bottles (`HOMEBREW_BINTRAY_USER` and `HOMEBREW_BINTRAY
 brew pr-upload --bintray-org=tnarik --root-url=https://dl.bintray.com/tnarik/bottles-brew
 ```
 
-It can be used with `--no-publish` in case chacking and manual publishing is desired (they will be uploaded, but kept private for some time until they expire if not published).
+It can be used with `--no-publish` in case checking and manual publishing is desired (they will be uploaded, but kept private for some time until they expire if not published).
