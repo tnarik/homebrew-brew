@@ -13,7 +13,7 @@ class GitCafe < Formula
   end
 
   # Could add depends_on "git", but let's not require the installation as git-cafe is more of a plugin
-  depends_on "python3"
+  depends_on "python"
 
   def install
     bin.install "git-all" => "git-all"

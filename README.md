@@ -57,3 +57,8 @@ brew pr-upload --bintray-org=tnarik --root-url=https://dl.bintray.com/tnarik/bot
 ```
 
 It can be used with `--no-publish` in case checking and manual publishing is desired (they will be uploaded, but kept private for some time until they expire if not published).
+
+
+`brew audit --strict --online <formulae>` is a good way of validating the formulae syntax.
+
+There is some information [here](https://docs.brew.sh/Python-for-Formula-Authors) regarding Python related formulae.
