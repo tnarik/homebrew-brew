@@ -1,5 +1,5 @@
 class CaddyAuth < Formula
-  desc "Powerful, enterprise-ready, open source web server with automatic HTTPS (with custom plugins)"
+  desc "Powerful, enterprise-ready, OSS web server with automatic HTTPS (customized)"
   homepage "https://caddyserver.com/"
   url "https://github.com/caddyserver/caddy/archive/v2.4.4.tar.gz"
   sha256 "0ea7b65406c77b2ce88cdf496e82b70838c78305659fa5c891ef004dfabcc17a"
@@ -58,10 +58,10 @@ class CaddyAuth < Formula
     end
     sleep 2
 
-    assert_match "\":#{port2}\"",
-      shell_output("curl -s http://127.0.0.1:#{port1}/config/apps/http/servers/srv0/listen/0")
-    assert_match "Hello, Caddy!", shell_output("curl -s http://127.0.0.1:#{port2}")
+    assert_match("\":#{port2}\"",
+      shell_output("curl -s http://127.0.0.1:#{port1}/config/apps/http/servers/srv0/listen/0"))
+    assert_match("Hello, Caddy!", shell_output("curl -s http://127.0.0.1:#{port2}"))
 
-    assert_match version.to_s, shell_output("#{bin}/caddy version")
+    assert_match(version.to_s, shell_output("#{bin}/caddy version"))
   end
 end
