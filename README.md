@@ -48,9 +48,27 @@ Commits, branches, etc... can be run from the tap created (no need to clone outs
 Running `brew test-bot --tap=tnarik/brew <formula>` would test and analyze the formula <formula> and create a bottle based on the OS/architecture used for running the process.
 
 ## Notes
-Even though the installation of some tools/applications starts from private repos, it makes sense distributing what is basically source code (scripts) as a bottle as well just in case someone else actually wants to use them. Found some information [here](https://jonathanchang.org/blog/maintain-your-own-homebrew-repository-with-binary-bottles/), but as of 2021 Bintray has been shutdown and the process doesn't work that way.
+Even though the installation of some tools/applications starts from private repos, it makes sense distributing what is basically source code (scripts) as a bottle as well just in case someone else actually wants to use them.
 
-That means in some instances building from source might break until I finally manage to find the time to migrate the code to public repos.
+As the git-cafe repo is private, it means building from source might break (on a CI pipeline or some machines) until I finally manage to find the time to migrate the code to public repos. Therefore I'm creating and uploading bottles manually from my local installation.
+
+Bintray used to be supported (I followed some information [here](https://jonathanchang.org/blog/maintain-your-own-homebrew-repository-with-binary-bottles/)), but as of 2021 it shuthdown and the process is slightly different.
+
+Until a migration to a public repo, a bottle can be created via:
+
+`brew bottle --json <formula>` or `brew test-bot --tap=tnarik/brew <formula>`
+
+Then it can be uploaded to GitHub Packages, which requires the configuration of:
+
+```
+export HOMEBREW_GITHUB_PACKAGES_USER=<YOUR_USER>
+export HOMEBREW_GITHUB_PACKAGES_TOKEN=<YOUR_PERSONAL_ACCESS_TOKEN>
+```
+
+`<YOUR_PERSONAL_ACCESS_TOKEN>` is created via `GitHub > Settings > Developer Settings > Personal access tokens`. The following scopes should be granted:
+
+* `write:packages`
+
 
 ~~Bottles will be uploaded to bintray, which is free for open source projects. I'm not sure if it is a restriction, but it is a good idea to have the name of the repository starting with `bottles` and it doesn't hurt if `bottles-<tap>` matches `homebrew-<tap>`.~~
 ~~Other than that (and optionally selecting a OSS license for the whole repo), a package need to be created, matching the name of the different formulae. The OSS license can be selected at that point.~~
