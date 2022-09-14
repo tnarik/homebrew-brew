@@ -56,7 +56,8 @@ Bintray used to be supported (I followed some information [here](https://jonatha
 
 Until a migration to a public repo, a bottle can be created via:
 
-`brew bottle --json <formula>` or `brew test-bot --tap=tnarik/brew <formula>`
+1. either `brew bottle --root-url=https://ghcr.io/v2/tnarik/brew --json <formula>` followed by `brew bottle --merge --write --no-commit <JSON FILE CREATED>`
+2. or `brew test-bot --root-url=https://ghcr.io/v2/tnarik/brew --tap=tnarik/brew <formula>`
 
 Then it can be uploaded to GitHub Packages, which requires the configuration of:
 
@@ -71,8 +72,9 @@ export HOMEBREW_GITHUB_PACKAGES_TOKEN=<YOUR_PERSONAL_ACCESS_TOKEN>
 
 Use `brew pr-upload --upload-only --root-url=https://ghcr.io/v2/<tap>`, where `<tap>` is in this case `tnarik/brew`.
 
-It essentially uses the GitHub Docker Container Registry, with an artifact domain of `tnarik/brew`.
+It essentially uses the GitHub Packages (Docker Container Registry), with an artifact domain of `tnarik/brew`.
 
+**note**: and alternative is to handle the upload of the binaries and editing of recipes manually.
 
 ~~Bottles will be uploaded to bintray, which is free for open source projects. I'm not sure if it is a restriction, but it is a good idea to have the name of the repository starting with `bottles` and it doesn't hurt if `bottles-<tap>` matches `homebrew-<tap>`.~~
 ~~Other than that (and optionally selecting a OSS license for the whole repo), a package need to be created, matching the name of the different formulae. The OSS license can be selected at that point.~~
