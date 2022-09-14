@@ -8,9 +8,8 @@ class GitCafe < Formula
 
   bottle do
     root_url "https://dl.bintray.com/tnarik/bottles-brew"
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "fda86fa55b9906f11b57b013a706fd19395dc9abf3dc463665b0273ed08d79fc" => :catalina
+    sha256 cellar: :any_skip_relocation, catalina: "fda86fa55b9906f11b57b013a706fd19395dc9abf3dc463665b0273ed08d79fc"
   end
 
   # Could add depends_on "git", but let's not require the installation as git-cafe is more of a plugin
