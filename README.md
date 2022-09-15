@@ -56,8 +56,11 @@ Bintray used to be supported (I followed some information [here](https://jonatha
 
 Until a migration to a public repo, a bottle can be created via:
 
-1. either `brew bottle --root-url=https://ghcr.io/v2/tnarik/brew --json <formula>` followed by `brew bottle --merge --write --no-commit <JSON FILE CREATED>`
-2. or `brew test-bot --root-url=https://ghcr.io/v2/tnarik/brew --tap=tnarik/brew <formula>`
+1. either:
+  * `brew install --build-bottle <formula path>` to prepare the package
+  * `brew bottle --root-url=https://ghcr.io/v2/tnarik/brew --json <formula>` to generate the bottle
+  * followed by `brew bottle --merge --write --no-commit <JSON FILE CREATED>` to merge the bottle info
+2. or `brew test-bot --root-url=https://ghcr.io/v2/tnarik/brew --tap=tnarik/brew <formula>` to do all the above plus run checks.
 
 Then it can be uploaded to GitHub Packages, which requires the configuration of:
 
