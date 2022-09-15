@@ -77,23 +77,8 @@ Use `brew pr-upload --upload-only --root-url=https://ghcr.io/v2/<tap>`, where `<
 
 It essentially uses the GitHub Packages (Docker Container Registry), with an artifact domain of `tnarik/brew`.
 
-**note**: and alternative is to handle the upload of the binaries and editing of recipes manually.
+**note**: an alternative is to handle the upload of the binaries and editing of recipes manually.
 
-~~Bottles will be uploaded to bintray, which is free for open source projects. I'm not sure if it is a restriction, but it is a good idea to have the name of the repository starting with `bottles` and it doesn't hurt if `bottles-<tap>` matches `homebrew-<tap>`.~~
-~~Other than that (and optionally selecting a OSS license for the whole repo), a package need to be created, matching the name of the different formulae. The OSS license can be selected at that point.~~
-
-~~The following would run locally the test-bot flow for the formula, creating the bottles.~~
-
-```
-#brew test-bot --root-url=https://dl.bintray.com/tnarik/bottles-brew --bintray-org=tnarik --tap=tnarik/brew <formula>
-```
-
-~~And this would upload the bottles (`HOMEBREW_BINTRAY_USER` and `HOMEBREW_BINTRAY_KEY` need to be defined):~~
-
-```
-#brew pr-upload --bintray-org=tnarik --root-url=https://dl.bintray.com/tnarik/bottles-brew
-```
-
-~~It can be used with `--no-publish` in case checking and manual publishing is desired (they will be uploaded, but kept private for some time until they expire if not published).~~
+**note**: as the default visibility of a package is `private`, it should be changed to `public` via GitHub. There seems to be a way of allowing the download of private packages via a proxy such as JFrog Artifactory or by adding a Custom Download Strategy to the tap and the formulae requiring it, but it is a bit of an overkill for what I'm trying to do (would like to find out how to do so, but the package tools are nothing fancy, even if the source is kept in my own repos).
 
 ~~There is some information [here](https://docs.brew.sh/Python-for-Formula-Authors) regarding Python related formulae.~~
