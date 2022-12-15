@@ -1,7 +1,7 @@
 class GitCafe < Formula
   desc "GIT Custom utils by tnarik"
-  homepage "https://gogs.lecafeautomatique.net/tnarik/git_custom"
-  url "git@gitcafe:tnarik/git_custom.git",
+  homepage "https://github.com/tnarik/git_custom"
+  url "git@github.com:tnarik/git_custom.git",
     using:    :git,
     revision: "a0bbe10c2721f97737c7106daa57c652903e0a1b"
   version "0.0.3"
