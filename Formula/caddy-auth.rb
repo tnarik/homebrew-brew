@@ -1,8 +1,8 @@
 class CaddyAuth < Formula
   desc "Powerful, enterprise-ready, OSS web server with automatic HTTPS (customized)"
   homepage "https://caddyserver.com/"
-  url "https://github.com/caddyserver/caddy/archive/refs/tags/v2.4.4.tar.gz"
-  sha256 "0ea7b65406c77b2ce88cdf496e82b70838c78305659fa5c891ef004dfabcc17a"
+  url "https://github.com/caddyserver/caddy/archive/refs/tags/v2.7.5.tar.gz"
+  sha256 "eeaecc1ea18b7aa37ece168562beb1ab592767cbedfaa411040ae0301aaeeef1"
   license "Apache-2.0"
   head "https://github.com/caddyserver/caddy.git", branch: "master"
 
@@ -14,8 +14,8 @@ class CaddyAuth < Formula
   depends_on "go" => :build
 
   resource "xcaddy" do
-    url "https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.1.9.tar.gz"
-    sha256 "399880f59bf093394088cf2d802b19e666377aea563b7ada5001624c489b62c9"
+    url "https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.3.5.tar.gz"
+    sha256 "41188931a3346787f9f4bc9b0f57db1ba59ab228113dcf0c91382e40960ee783"
   end
 
   def install
@@ -23,11 +23,12 @@ class CaddyAuth < Formula
 
     resource("xcaddy").stage do
       system "go", "run", "cmd/xcaddy/main.go", "build", revision, \
-        "--with", "github.com/greenpau/caddy-auth-jwt", \
-        "--with", "github.com/greenpau/caddy-auth-portal", \
+        "--with", "github.com/greenpau//caddy-security", \
         "--with", "github.com/greenpau/caddy-trace", \
         "--output", bin/"caddy"
     end
+
+    generate_completions_from_executable("go", "run", "cmd/caddy/main.go", "completion")
   end
 
   service do
