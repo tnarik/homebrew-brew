@@ -1,7 +1,7 @@
 class CaddyAuth < Formula
   desc "Powerful, enterprise-ready, OSS web server with automatic HTTPS (customized)"
   homepage "https://caddyserver.com/"
-  url "https://github.com/caddyserver/caddy/archive/v2.4.4.tar.gz"
+  url "https://github.com/caddyserver/caddy/archive/refs/tags/v2.4.4.tar.gz"
   sha256 "0ea7b65406c77b2ce88cdf496e82b70838c78305659fa5c891ef004dfabcc17a"
   license "Apache-2.0"
   head "https://github.com/caddyserver/caddy.git", branch: "master"
@@ -14,7 +14,7 @@ class CaddyAuth < Formula
   depends_on "go" => :build
 
   resource "xcaddy" do
-    url "https://github.com/caddyserver/xcaddy/archive/v0.1.9.tar.gz"
+    url "https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.1.9.tar.gz"
     sha256 "399880f59bf093394088cf2d802b19e666377aea563b7ada5001624c489b62c9"
   end
 

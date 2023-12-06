@@ -2,15 +2,15 @@ class Tccutil < Formula
   include Language::Python::Shebang
 
   desc "Utility to modify the macOS Accessibility Database (TCC.db)"
-  homepage "https://github.com/jacobsalmela/tccutil"
-  url "https://github.com/jacobsalmela/tccutil/archive/refs/tags/v1.2.13.tar.gz"
-  sha256 "b0e3f660857426372588b0f659056a059ccbd35a4c91538c75671d960cb91030"
+  homepage "https://github.com/tnarik/tccutil"
+  url "https://github.com/tnarik/tccutil/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "45047b0eadf1a520cba634542d1402243bdd666bb507650513aef3896e463a5f"
   license "GPL-2.0-or-later"
-  head "https://github.com/jacobsalmela/tccutil.git", branch: "main"
+  head "https://github.com/tnarik/tccutil.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "d57eaab2e7dac4348893666c3b32c01270c28d77be17ad6de74c190f7b620efb"
+    root_url "https://ghcr.io/v2/tnarik/brew"
+    sha256 cellar: :any_skip_relocation, all: "6de7343a59d8cc022a3454d7647d69848fe772ee03b9f1c380c5dfe40b119163"
   end
 
   depends_on :macos
