@@ -23,7 +23,7 @@ class CaddyAuth < Formula
 
     resource("xcaddy").stage do
       system "go", "run", "cmd/xcaddy/main.go", "build", revision, \
-        "--with", "github.com/greenpau//caddy-security", \
+        "--with", "github.com/greenpau/caddy-security", \
         "--with", "github.com/greenpau/caddy-trace", \
         "--output", bin/"caddy"
     end
