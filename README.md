@@ -25,7 +25,7 @@ cd $(brew --repo tnarik/brew)
 From there you can work on the formulae, starting by the creation based on a template:
 
 ```
-brew create --tap=tnarik/brew <URL to zipl or tarball>
+brew create --tap=tnarik/brew <URL to zip or tarball>
 ```
 
 More information is available [here](https://docs.brew.sh/Formula-Cookbook)
