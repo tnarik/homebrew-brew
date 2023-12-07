@@ -27,7 +27,7 @@ class Tccutil < Formula
   end
 
   test do
-    assert_match "Unrecognized command check", shell_output("#{bin}/tccutil check 2>&1")
+    assert_match "Unrecognized command \"check\"", shell_output("#{bin}/tccutil check 2>&1")
     assert_match "tccutil #{version}", shell_output("#{bin}/tccutil --version")
   end
 end
