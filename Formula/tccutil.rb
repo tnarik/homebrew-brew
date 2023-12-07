@@ -4,7 +4,7 @@ class Tccutil < Formula
   desc "Utility to modify the macOS Accessibility Database (TCC.db)"
   homepage "https://github.com/tnarik/tccutil"
   url "https://github.com/tnarik/tccutil/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "af799a69a32b5d0a9b7eeca2722136d4bc2906a6567a30e1ff8bef855b871c96"
+  sha256 "7f3e52a2a9cb662182972ddc851d86ec8839b4c498c0e4445a3c53836e7ff2aa"
   license "GPL-2.0-or-later"
   head "https://github.com/tnarik/tccutil.git", branch: "main"
 
