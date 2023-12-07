@@ -10,7 +10,7 @@ class Tccutil < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/tnarik/brew"
-    sha256 cellar: :any_skip_relocation, all: "299559f24abe2ce4c1156897c3f4304ac37f669eeb51a179aa46d3ae93cf901c"
+    sha256 cellar: :any_skip_relocation, all: "b19dad5f5b3fa2d3690d79379b7f2704b052dd2e09d34592ff224d8ed4bf422e"
   end
 
   depends_on :macos
