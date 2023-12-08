@@ -7,8 +7,9 @@ class CaddyAuth < Formula
   head "https://github.com/caddyserver/caddy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, catalina: "602eb1542bfee701e114ffa662ffece95fc3c5dfebcf6796d58a1209789cd00b"
+    root_url "https://github.com/tnarik/homebrew-brew/releases/download/caddy-auth-2.7.5"
+    sha256 cellar: :any_skip_relocation, monterey:     "f0192b3fc504e3163a855cc540fc6d1be8b7f07aa83ca66de45a332e533724c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ec9ffd20c2046721c2210f02d34791e2cfe088cb349be251d3fb8c9a7a044f18"
   end
 
   depends_on "go" => :build
