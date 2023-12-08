@@ -1,9 +1,9 @@
 class GitCafe < Formula
   desc "GIT Custom utility scripts by tnarik"
   homepage "https://github.com/tnarik/git_custom"
-  url "git@github.com:tnarik/git_custom.git",
+  url "https://github.com/tnarik/git_custom.git",
     using:    :git,
-    revision: "a0bbe10c2721f97737c7106daa57c652903e0a1b"
+    revision: "185b396d19403fc899cc97264659d2bfb0da5367"
   version "0.0.3"
 
   bottle do
