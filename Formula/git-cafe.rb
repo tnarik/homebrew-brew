@@ -7,9 +7,9 @@ class GitCafe < Formula
   version "0.0.3"
 
   bottle do
-    root_url "https://ghcr.io/v2/tnarik/brew"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, catalina: "9bd26a7404d26111d3055b1a7bb975601fc926d7f807ae53c6a8f3543f6ff064"
+    root_url "https://github.com/tnarik/homebrew-brew/releases/download/git-cafe-0.0.3"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, monterey: "1f2399e066a1704eb2f94394c4291ee3c54650e4a8351e66649ee4fcccd6d967"
   end
 
   # Could add depends_on "git", but let's not require the installation as git-cafe is more of a plugin
