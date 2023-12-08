@@ -1,5 +1,5 @@
 class GitCafe < Formula
-  desc "GIT Custom utils by tnarik"
+  desc "GIT Custom utility scripts by tnarik"
   homepage "https://github.com/tnarik/git_custom"
   url "git@github.com:tnarik/git_custom.git",
     using:    :git,
