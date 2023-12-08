@@ -82,10 +82,8 @@ export HOMEBREW_GITHUB_PACKAGES_TOKEN=<YOUR_PERSONAL_ACCESS_TOKEN>
 
 Use `brew pr-upload --upload-only --root-url=https://ghcr.io/v2/<tap>`, where `<tap>` is in this case `tnarik/brew`.
 
-It essentially uses the GitHub Packages (Docker Container Registry), with an artifact domain of `tnarik/brew`.
+It essentially uses the GitHub Packages (Docker Container Registry), with an artefact domain of `tnarik/brew`.
 
 **note**: an alternative is to handle the upload of the binaries and editing of recipes manually.
 
 **note**: as the default visibility of a package is `private`, it should be changed to `public` via GitHub. There seems to be a way of allowing the download of private packages via a proxy such as JFrog Artifactory or by adding a Custom Download Strategy to the tap and the formulae requiring it, but it is a bit of an overkill for what I'm trying to do (would like to find out how to do so, but the package tools are nothing fancy, even if the source is kept in my own repos).
-
-~~There is some information [here](https://docs.brew.sh/Python-for-Formula-Authors) regarding Python related formulae.~~
