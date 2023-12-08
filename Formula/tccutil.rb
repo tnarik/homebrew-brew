@@ -10,7 +10,7 @@ class Tccutil < Formula
 
   bottle do
     root_url "https://github.com/tnarik/homebrew-brew/releases/download/tccutil-1.4.0"
-    sha256 cellar: :any_skip_relocation, monterey: "a7b77d91755c4acc2ef3e5770529cb42d9c3b2e661f40b3e221525b6dcb25404"
+    sha256 cellar: :any_skip_relocation, all: "a7b77d91755c4acc2ef3e5770529cb42d9c3b2e661f40b3e221525b6dcb25404"
   end
 
   depends_on :macos
